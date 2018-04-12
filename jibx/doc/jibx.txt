@@ -1,0 +1,38 @@
+jibx (Java Bind Xml)
+
+说明: 基于各种环境或缺乏支持的原因，jibx未能打开缺口，故而暂停研发.
+
+参考:
+http://www.360doc.com/content/10/1129/14/2795334_73408558.shtml
+
+http://www.cnblogs.com/hoojo/archive/2011/04/27/2030205.html
+
+jibx和jaxb区别
+jibx使用java字节码enhance技术，而jaxb更多在于源代码生成技术.
+jibx的工作主要在于前期，也就是进行字节码绑定，这一部分基本是
+在编译器完成. 在运行期，不需要任何配置，由于字节码已经潜入java类中.
+而jaxb更多允许在运行期，通过元数据或xsd文件进行解析绑定. 相对于jaxb
+来说，jibx更加快速以及灵活.
+JiBX用一个绑定定义文档来定义xml和bean的转换规则，这个文档就是2者的
+桥梁.
+
+
+java -cp ../target/classes;jibx-tools-1.2.6.jar;jibx-bind-1.2.6.jar;jibx-run-1.2.6.jar;bcel-5.1.jar;jibx-extras-1.2.6.jar;jibx-schema-1.2.6.jar;log4j-1.2.17.jar;qdox-1.12.1.jar org.jibx.binding.generator.BindGen -b bind.xml com.hua.bean.User
+
+java -cp ../target/classes;jibx-tools-1.2.6.jar;jibx-bind-1.2.6.jar;jibx-run-1.2.6.jar;bcel-5.1.jar;jibx-extras-1.2.6.jar;jibx-schema-1.2.6.jar;log4j-1.2.17.jar;qdox-1.12.1.jar org.jibx.binding.BindingGenerator -b bind.xml com.hua.bean.User
+
+
+java -cp jibx-tools-1.2.6.jar;jibx-bind-1.2.6.jar;jibx-run-1.2.6.jar;bcel-5.1.jar;jibx-extras-1.2.6.jar;jibx-schema-1.2.6.jar;log4j-1.2.17.jar;qdox-1.12.1.jar org.jibx.binding.Compile -v UserBind.xml
+
+
+
+
+
+
+
+
+
+
+
+
+

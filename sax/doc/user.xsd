@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+@filename User.xsd 
+@version 1.0 
+@author qye.zheng 
+@description User xml模式定义
+ -->
+<xsd:schema xmlns="http://www.hua.com/user" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.hua.com/user">
+
+	<!-- 抽象类型定义，其他类型可以继承该类型 -->
+	<xsd:complexType name="identifiedType" abstract="true">
+		<!-- 唯一标识符 [必填] -->
+		<xsd:attribute name="id" use="required">
+			<xsd:simpleType>
+				<!-- 在约束中用 base 规定 xsd:string 类型，而其目标则省略掉type -->
+				<xsd:restriction base="xsd:string">
+					<xsd:minLength value="6" />
+					<xsd:maxLength value="256" />
+				</xsd:restriction>
+			</xsd:simpleType>		
+		</xsd:attribute>
+	</xsd:complexType>
+
+	<!-- 根元素定义 -->
+	<xsd:element name="user">
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="identifiedType">
+					<xsd:group ref="userElements" />
+					<!-- 用户状态 - 是否有效 默认 : 有效 -->
+					<xsd:attribute name="valid" type="xsd:boolean" default="true">
+					</xsd:attribute>
+				</xsd:extension>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<!--  -->
+	<xsd:group name="userElements">
+		<xsd:sequence>
+			<!-- minOccurs 大于等于1是必填，为0是非必填 maxOccurs设置最多出现的次数 -->
+			<!-- 登录-用户名 (唯一) [必填] -->
+			<xsd:element ref="username" minOccurs="1" />
+			<!-- 昵称 (用于显示) -->
+			<xsd:element ref="nickname" minOccurs="0" />
+			<!-- 年龄 [1, 150] -->
+			<xsd:element ref="age" minOccurs="0" />			
+			<!-- 登录-密码  [必填] -->
+			<xsd:element ref="password" minOccurs="1" />
+			<!-- 用户类型，默认是游客，element元素不能包含默认值 -->
+			<xsd:element ref="type" minOccurs="0" />
+			<!-- 上一次登录-时间 -->
+			<xsd:element ref="lastLoginTime" minOccurs="0" />
+			<!-- 上一次登录-IP地址 -->
+			<xsd:element ref="lastLoginIp" minOccurs="0" />
+			<!-- 地址数组, [必填] 至少一个 -->
+			<xsd:element ref="addresses" minOccurs="0" />
+			<!-- 所属公司 [必填] -->
+			<xsd:element ref="company" minOccurs="1" />			
+		</xsd:sequence>
+	</xsd:group>
+
+	<!-- 登录-用户名 (唯一) -->
+	<xsd:element name="username">
+		<xsd:simpleType>
+			<!-- 在约束中用 base 规定 xsd:string 类型，而其目标则省略掉type -->
+			<xsd:restriction base="xsd:string">
+				<xsd:minLength value="2" />
+				<xsd:maxLength value="20" />
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	
+	<!-- 昵称 (用于显示) -->
+	<xsd:element name="nickname">
+		<xsd:simpleType>
+			<!-- 在约束中用 base 规定 xsd:string 类型，而其目标则省略掉type -->
+			<xsd:restriction base="xsd:string">
+				<xsd:minLength value="3" />
+				<xsd:maxLength value="20" />
+			</xsd:restriction>
+		</xsd:simpleType>	
+	</xsd:element>
+	
+	<!-- 年龄 [1, 150]  -->
+	<xsd:element name="age">
+		<xsd:simpleType>
+			<!-- 在约束中用 base 规定 xsd:integer 类型，而其目标则省略掉type -->
+			<xsd:restriction base="xsd:integer">
+				<xsd:minInclusive value="1" />
+				<xsd:maxInclusive value="150" />
+			</xsd:restriction>
+		</xsd:simpleType>	
+	</xsd:element>
+		
+	<!-- 登录-密码 -->
+	<xsd:element name="password">
+		<xsd:simpleType>
+		<!-- 在约束中用 base 规定 xsd:string 类型，而其目标则省略掉type -->
+			<xsd:restriction base="xsd:string">
+				<xsd:minLength value="6" />
+				<xsd:maxLength value="15" />
+			</xsd:restriction>
+		</xsd:simpleType>	
+	</xsd:element>
+
+	<!-- 用户类型 -->
+	<xsd:element name="type">
+		<xsd:complexType>
+			<!-- 属性，默认值 101 (游客) -->
+			<xsd:attribute name="code" default="101">
+				<xsd:simpleType>
+					<!-- 枚举 -->
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="001" />
+						<xsd:enumeration value="002" />
+						<xsd:enumeration value="003" />
+						<xsd:enumeration value="004" />
+						<xsd:enumeration value="005" />
+						<xsd:enumeration value="101" />
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<!-- 上一次登录-时间 -->
+	<xsd:element name="lastLoginTime">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<!-- 日期时间格式 --> <!-- TODO 格式验证 YYYY-MM-DDThh:mm:ss T表示必须的时间起始部分 -->
+				<!-- yyyy-MM-dd HH:mm:ss -->
+				<xsd:pattern value="\d{4}\-[0-1][0-9]\-[0-3][0-9] [0-2][0-9]\:[0-5][0-9]\:[0-5][0-9]" />
+			</xsd:restriction>
+		</xsd:simpleType>	
+	</xsd:element>
+	
+	<!-- 上一次登录-IP地址 -->
+	<xsd:element name="lastLoginIp">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<!-- TODO 格式验证 192.168.5.123 -->
+				<xsd:pattern value="\d+[\.]\d+[\.]\d+[\.]\d+" />
+			</xsd:restriction>
+		</xsd:simpleType>	
+	</xsd:element>
+	
+	<!-- 地址数组  至少一个 -->
+	<xsd:element name="addresses">
+		<xsd:complexType>
+			<xsd:sequence>
+				<!-- 至少有一个  -->
+				<xsd:element ref="address" minOccurs="1" maxOccurs="unbounded" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- 地址对象 -->
+	<xsd:element name="address">
+		<xsd:complexType>
+			<xsd:sequence>
+				<!-- 国家 [必填] -->
+				<xsd:element ref="nation" minOccurs="1" />			
+				<!-- 省 [必填] -->
+				<xsd:element ref="province" minOccurs="1" />				
+				<!-- 市 [必填] -->
+				<xsd:element ref="city" minOccurs="1" />
+				<!-- 县 -->
+				<xsd:element ref="county" />			
+				<!-- 街道 -->
+				<xsd:element ref="street" />						
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<!-- 国家 -->
+	<xsd:element name="nation">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:minLength value="0" />
+				<xsd:maxLength value="256" />
+			</xsd:restriction>
+		</xsd:simpleType>		
+	</xsd:element>
+
+	<!-- 省 -->
+	<xsd:element name="province">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:minLength value="0" />
+				<xsd:maxLength value="128" />
+			</xsd:restriction>
+		</xsd:simpleType>		
+	</xsd:element>
+	
+	<!-- 市 -->
+	<xsd:element name="city">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:minLength value="0" />
+				<xsd:maxLength value="128" />
+			</xsd:restriction>
+		</xsd:simpleType>		
+	</xsd:element>
+	
+	<!-- 县 -->
+	<xsd:element name="county">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:minLength value="0" />
+				<xsd:maxLength value="128" />
+			</xsd:restriction>
+		</xsd:simpleType>		
+	</xsd:element>
+	
+	<!-- 街道 -->
+	<xsd:element name="street">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:minLength value="0" />
+				<xsd:maxLength value="256" />
+			</xsd:restriction>
+		</xsd:simpleType>		
+	</xsd:element>		
+	
+	<!-- 所属公司 -->
+	<xsd:element name="company">
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="identifiedType">
+					<xsd:sequence>
+						<!-- 公司名称  [必填] -->
+						<xsd:element ref="name" minOccurs="1" />
+						<!-- 公司地址 -->
+						<xsd:element ref="location" minOccurs="0" />
+						<!-- 在该公司担任的职位  [必填] -->
+						<xsd:element ref="position" minOccurs="1" />
+						<!-- 月薪 [2000, 50000] -->
+						<xsd:element ref="salary" minOccurs="0" />					
+						<!-- 备注 -->
+						<xsd:element ref="remark" minOccurs="0" />
+					</xsd:sequence>						
+				</xsd:extension>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- 公司名称 -->
+	<xsd:element name="name">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:minLength value="0" />
+				<xsd:maxLength value="64" />
+			</xsd:restriction>
+		</xsd:simpleType>		
+	</xsd:element>			
+
+	<!-- 公司地址 -->
+	<xsd:element name="location">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:minLength value="0" />
+				<xsd:maxLength value="256" />
+			</xsd:restriction>
+		</xsd:simpleType>		
+	</xsd:element>		
+	
+	<!-- 在该公司担任的职位 -->
+	<xsd:element name="position">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:minLength value="0" />
+				<xsd:maxLength value="64" />
+			</xsd:restriction>
+		</xsd:simpleType>		
+	</xsd:element>		
+	
+	<!-- 月薪 [2000, 50000] -->
+	<xsd:element name="salary">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:double">
+				<xsd:minInclusive value="2000" />
+				<xsd:maxInclusive value="50000" />
+			</xsd:restriction>
+		</xsd:simpleType>		
+	</xsd:element>		
+	
+	<!-- 备注 -->
+	<xsd:element name="remark">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:minLength value="0" />
+				<xsd:maxLength value="1024" />
+			</xsd:restriction>
+		</xsd:simpleType>		
+	</xsd:element>						
+	
+</xsd:schema>

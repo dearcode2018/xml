@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapping PUBLIC 
+  "-//EXOLAB/Castor Object Mapping DTD Version 1.0//EN"
+  "http://castor.exolab.org/mapping.dtd">
+  
+<mapping>
+	<class name="com.hua.bean.User" auto-complete="true">
+		<description>User</description>
+		<!-- 根结点 -->
+		<map-to xml="user" />
+		<field name="id" type="string">	
+			<bind-xml name="id" node="element" />
+		</field>
+		<field name="username" type="string">
+			<bind-xml name="username" node="element" />
+		</field>
+		<field name="nickname" type="string">
+			<bind-xml name="nickname" node="element" />
+		</field>
+		<field name="password" type="string">
+			<bind-xml name="password" node="element" />
+		</field>
+		<field name="type" type="com.hua.constant.sys.UserType">
+			<bind-xml name="type" node="element" />
+		</field>
+		<field name="valid" type="java.lang.Boolean">
+			<bind-xml name="valid" node="element" />
+		</field>	
+		<!-- 注意，使用handler来解析日期后，
+		type需要设置为string才能正常转换 -->
+		<field name="lastLoginTime" type="string" handler="com.hua.handler.DateTimeHandler">
+			<bind-xml name="lastLoginTime" node="element" />
+		</field>
+		<field name="lastLoginIp" type="string">
+			<bind-xml name="lastLoginIp" node="element" />
+		</field>		
+	</class>
+	
+</mapping>

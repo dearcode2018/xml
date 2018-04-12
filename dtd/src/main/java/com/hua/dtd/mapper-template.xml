@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.2//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="">
+	
+	<!-- 实体映射 -->
+	<resultMap type="" id="xxResultMap">
+		<!-- 主键映射 -->
+		<id property="" javaType="" column="" jdbcType="" />
+		<!-- 定长字符 -->
+		<result property="" javaType="string" column="" jdbcType="CHAR" />
+		<!-- 变长字符 -->
+		<result property="" javaType="string" column="" jdbcType="VARCHAR" />
+		<!-- 数字 -->
+		<result property="" javaType="" column="" jdbcType="NUMERIC" />
+		<!-- 日期 -->
+		<result property="" javaType="date" column="" jdbcType="DATE" />
+	</resultMap>
+	
+	<!-- sql复用 -->
+	<sql id="">
+	</sql>
+	
+	<!-- 插入单个对象 -->
+	<insert id="insert" parameterType="">
+		<selectKey keyProperty="oid" order="BEFORE" resultType="Long">
+			SELECT seq_student_oid.nextVal FROM dual
+		</selectKey>
+		<![CDATA[
+			
+			]]>
+	</insert>
+	
+	<!-- 批量插入对象 -->
+	<insert id="insertBatch" parameterType="">
+		<selectKey keyProperty="oid" order="BEFORE" resultType="Long">
+			SELECT seq_student_oid.nextVal FROM dual
+		</selectKey>
+		<![CDATA[
+			
+			]]>
+	</insert>
+
+	<!-- 删除单个对象 -->
+	<delete id="delete" parameterType="Long">
+		<![CDATA[
+			
+			]]>
+	</delete>
+	
+	<!-- 批量删除对象 -->
+	<delete id="deleteBatch">
+		<![CDATA[
+			
+			]]>
+		<!-- 传入的是单参数且参数类型是一个List时，collection属性值为list
+		传入的是单参数且参数类型是一个数组时，collection的属性值为array -->
+		<!-- 传入Map<String, Object> 此时 collection的值是此map的key值 
+			Map<String, Object>中的Object可以是List或array，这样就可以传入多个List对象，
+			由其key来确定使用的是哪个List
+		-->
+		<!-- 例如 Map<String, Object> 中有一个List list; map.put("list_01", list) 
+		若要使用list中的值，collection指定为list_01即可-->
+		<!-- 传参方式1 : 多个list/array，然后通过其属性名作为key来填充collection的属性值 -->
+		<!-- 传参方式2 : 将多个list/array封装成一个map，使用key来填充collection的属性值 -->
+		<foreach collection="list" item="item" open="(" separator=", " close=")">
+			#{item}
+		</foreach>
+		
+	</delete>
+
+	<!-- 更新单个对象(全量) -->
+	<update id="update" parameterType="">
+		<![CDATA[
+			
+			]]>
+	</update>
+	
+	<!-- 批量更新对象(全量) -->
+	<update id="updateBatch" parameterType="">
+		<![CDATA[
+			
+			]]>
+	</update>
+
+	<!-- 获取单个对象  -->
+	<select id="get" resultMap="" parameterType="Long">
+		<![CDATA[
+		
+			]]>
+	</select>
+
+	<!-- 搜索符合条件的对象  -->
+	<select id="search" resultMap=""  parameterType="pagerEntity">
+		<![CDATA[
+		
+			]]>
+	</select>
+	
+	<!-- 符合搜索条件的对象个数 -->
+	<select id="searchDataSize" resultType="Long" parameterType="pagerEntity">
+		<![CDATA[
+		
+			]]>
+	</select>
+		
+	<!--  获取所有对象 -->
+	<select id="listAll" resultMap="">
+		<![CDATA[
+		
+			]]>
+	</select>
+	
+	<!--  获取最大的Id -->
+	<select id="getMaxId" resultType="Long">
+		<![CDATA[
+		
+			]]>
+	</select>
+	
+</mapper>

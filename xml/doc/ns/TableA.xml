@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+@filename TableA.xml
+@version 1.0
+@author qye.zheng
+@description 
+-->
+
+<!-- 
+命名空间
+解决xml中命名空间的冲突可以通过使用名称前缀.
+
+命名空间声明
+xmlns:前缀="uri"
+
+ -->
+
+<root>
+	<h:table xmlns:h="http://www.w3.org/TR/html4/h">
+		<h:tr>
+			<h:td>Apples</h:td>
+			<h:td>Bananas</h:td>
+		</h:tr>
+	</h:table>
+
+	<f:table xmlns:f="http://www.w3.org/TR/html4/f">
+		<f:tr>
+			<f:td>Apples</f:td>
+			<f:td>Bananas</f:td>
+		</f:tr>
+	</f:table>
+</root>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<user>
+	<id>20150628</id>
+	<username>张三</username>
+	<nickname>少年张三丰</nickname>
+	<password>123456</password>
+	<valid>true</valid>
+	<lastLoginTime>2015-07-13 16:31:09</lastLoginTime>
+	<lastLoginIp>192.168.5.66</lastLoginIp>
+	<users>
+		<user>
+			<id>20150628</id>
+			<username>张三</username>
+			<nickname>少年张三丰</nickname>
+			<password>123456</password>
+			<valid>true</valid>
+			<lastLoginTime>2015-07-13 16:31:09</lastLoginTime>
+			<lastLoginIp>192.168.5.66</lastLoginIp>
+		</user>
+		<user>
+			<id>20150628</id>
+			<username>李四</username>
+			<nickname>四大天王</nickname>
+			<password>123456</password>
+			<valid>true</valid>
+			<lastLoginTime>2015-07-13 16:31:09</lastLoginTime>
+			<lastLoginIp>192.168.5.66</lastLoginIp>
+		</user>
+	</users>
+</user>

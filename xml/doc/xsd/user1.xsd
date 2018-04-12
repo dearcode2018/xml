@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+@filename User.xsd 
+@version 1.0 
+@author qye.zheng 
+@description User xml模式定义
+ -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.hua.com"
+	xmlns="http://www.hua.com" elementFormDefault="qualified">
+	
+	<!-- 所属公司 -->
+	<xsd:element name="user">
+		<xsd:complexType>
+			<xsd:sequence>
+				<!-- 公司名称 -->
+				<xsd:element name="name" type="xs:string" minOccurs="0" />
+				<!-- 公司地址 -->
+				<xsd:element name="location" type="xs:string" minOccurs="0" />
+				<!-- 在该公司担任的职位 -->
+				<xsd:element name="position" type="xs:string" minOccurs="0" />
+				<!-- 备注 -->
+				<xsd:element name="remark" type="xs:string" minOccurs="0" />
+			</xsd:sequence>	
+		</xsd:complexType>
+	</xsd:element>	
+
+</xsd:schema>

@@ -1,0 +1,90 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.hua</groupId>
+		<artifactId>xml-entire</artifactId>
+		<version>0.0.1</version>
+	</parent>	
+	<artifactId>castor</artifactId>
+	<packaging>jar</packaging>
+	<name>castor</name>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		
+		<xml.version>0.0.1</xml.version>
+		<castor.version>1.3.3</castor.version>		
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.hua</groupId>
+			<artifactId>xml</artifactId>
+			<version>${xml.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.codehaus.castor </groupId>
+			<artifactId>castor-core</artifactId>
+			<version>${castor.version}</version>
+		</dependency>			
+
+		<dependency>
+			<groupId>org.codehaus.castor </groupId>
+			<artifactId>castor-xml</artifactId>
+			<version>${castor.version}</version>
+		</dependency>	
+
+		<dependency>
+			<groupId>org.codehaus.castor </groupId>
+			<artifactId>castor-codegen</artifactId>
+			<version>${castor.version}</version>
+		</dependency>	
+
+		<dependency>
+			<groupId>org.codehaus.castor </groupId>
+			<artifactId>castor-xml-schema</artifactId>
+			<version>${castor.version}</version>
+		</dependency>	
+		
+		<dependency>
+			<groupId>org.codehaus.castor </groupId>
+			<artifactId>castor-xml-diff</artifactId>
+			<version>${castor.version}</version>
+		</dependency>	
+		
+<!-- 		<dependency>
+			<groupId>org.codehaus.castor </groupId>
+			<artifactId>castor-testsuite-xml-framework</artifactId>
+			<version>${castor.version}</version>
+			<exclusions>
+				排除自带的junit
+				<exclusion>
+					<groupId>junit</groupId>
+					<artifactId>junit</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>	
+		
+		<dependency>
+			<groupId>org.codehaus.castor </groupId>
+			<artifactId>castor-archetype-codegen-testcase</artifactId>
+			<version>${castor.version}</version>
+		</dependency>	 -->
+		
+		<dependency>
+			<groupId>org.codehaus.castor </groupId>
+			<artifactId>castor-anttasks</artifactId>
+			<version>${castor.version}</version>
+		</dependency>									
+
+		<dependency>
+			<groupId>org.codehaus.castor </groupId>
+			<artifactId>castor-xml-annotations</artifactId>
+			<version>${castor.version}</version>
+		</dependency>					
+		
+	</dependencies>
+
+</project>

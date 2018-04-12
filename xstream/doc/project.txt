@@ -1,0 +1,45 @@
+【项目信息】
+项目名称 : xstream
+中文名称 : 
+项目版本 : version 1.0
+
+主要技术 : xml --> object, object --> xml/json, json --> object
+
+项目描述 : xstream version 2.x
+
+项目备注 : 
+
+【项目规划】
+
+
+1)
+xstream 实施 xml/json 和 bean 的转换，需要 xmlpull库 、 jettison库的支持
+
+2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

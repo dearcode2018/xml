@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<soap:Body>
+		<AuthenticateUserEx3Response xmlns="http://UserManageCenter.7daysinn.cn/">
+			<AuthenticateUserEx3Result>
+				<_success>true</_success>
+				<Success>true</Success>
+				<ErrMsg>验证成功</ErrMsg>
+				<ObjData>
+					<UserID>26565</UserID>
+					<UserCode>31000002119</UserCode>
+					<Name>Test</Name>
+					<Title>店长</Title>
+					<Type>分店人员</Type>
+					<MebCardCode>31000002119</MebCardCode>
+					<Flag>1</Flag>
+					<Mobile>15812235620</Mobile>
+					<EMail>asd@qq.com</EMail>
+					<SecurityGrade>1</SecurityGrade>
+					<RoleGroupID>1</RoleGroupID>
+					<UserRoleGroupList>,2,75,</UserRoleGroupList>
+					<TelePhone />
+					<IDCardCode />
+					<Sex>男</Sex>
+					<Age>20</Age>
+					<Birthday>2015-06-29T00:00:00</Birthday>
+					<Education />
+					<Nation />
+					<Height />
+					<BirthPlace />
+					<GraduateSchool />
+					<MainOU>11010000</MainOU>
+					<Address />
+					<DeptListEx>
+						<DeptInfoEx>
+							<DeptID>10731001</DeptID>
+							<DeptName>长沙步行街店</DeptName>
+							<ParentDeptID>11010002</ParentDeptID>
+							<OUID>11010000</OUID>
+							<PositionID>0</PositionID>
+							<StationID>100001</StationID>
+							<StationName>店长</StationName>
+							<Remark />
+							<Flag>1</Flag>
+							<ChainID>18</ChainID>
+							<BrandID>1</BrandID>
+							<GroupID>1005</GroupID>
+						</DeptInfoEx>
+						<DeptInfoEx>
+							<DeptID>10731014</DeptID>
+							<DeptName>长沙火车站店</DeptName>
+							<ParentDeptID>11010002</ParentDeptID>
+							<OUID>11010000</OUID>
+							<PositionID>0</PositionID>
+							<StationID>100001</StationID>
+							<StationName>店长</StationName>
+							<Remark />
+							<Flag>1</Flag>
+							<ChainID>237</ChainID>
+							<BrandID>1</BrandID>
+							<GroupID>1005</GroupID>
+						</DeptInfoEx>
+					</DeptListEx>
+					<JoinTime>0001-01-01T00:00:00</JoinTime>
+					<LeaveTime>0001-01-01T00:00:00</LeaveTime>
+					<LeaderUserID>0</LeaderUserID>
+				</ObjData>
+			</AuthenticateUserEx3Result>
+		</AuthenticateUserEx3Response>
+	</soap:Body>
+</soap:Envelope>

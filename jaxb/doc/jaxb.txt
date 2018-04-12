@@ -1,0 +1,27 @@
+JAXB
+java architecture for xml binding
+
+官网
+https://jaxb.java.net
+
+1)
+schemagen
+通过com.sun.tools.jxc.SchemaGeneratorFacade
+com.sun.tools.jxc.SchemaGenerator run 方法中有参数 实例，可以参照来写参数.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

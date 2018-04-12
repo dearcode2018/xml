@@ -1,0 +1,33 @@
+dom4j(dom for java)
+
+结点是最高抽象
+Node(结点) --> Branch(分支) --> Document
+                                             --> Element
+ 					--> Entity                                         
+
+
+创建Document几种方式
+1) SAXReader
+SAXReader reader = new SAXReader();           
+Document   document = reader.read(new File("csdn.xml"));  
+2) DocumentHelper 解析文本
+String text = "<csdn></csdn>";            
+Document document = DocumentHelper.parseText(text); 
+3) DocumentHelper 构造对象
+//  创建根结点
+Document document = DocumentHelper.createDocument();
+Element root = document.addElement("csdn"); 
+
+Document / Element 等结点均是通过 DocumentHelper 帮助类来创建.
+
+
+
+
+
+
+
+
+
+
+
+

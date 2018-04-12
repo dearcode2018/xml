@@ -1,0 +1,27 @@
+XML(eXtensible Markup Language 可扩展标记语言)
+
+
+User示例
+提供 user.dtd 和 user.xsd 2种验证文件
+验证规格统一，长度、是否必填、格式(日期时间)统一
+默认 命名空间: http://www.hua.com/user
+验证: 正则/值/格式/长度/大小 验证
+
+xpath和xquery: 从xml文档中去 根据路径去寻找，这部分功能可以写一个综合典型的xml文档，
+然后来调试xpath和xquery的功能.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

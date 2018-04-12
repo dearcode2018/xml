@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+@filename Note.xml
+@version 1.0
+@author qye.zheng
+@description 
+-->
+<!DOCTYPE note SYSTEM "Note.dtd" >
+
+<note>
+	<to>&gt;ZhangSan</to>
+	<from>&lt;LiSi</from>
+	<heading>from zhangsan to lisi</heading>
+	<body>don&apos;t forget me this weekend!</body>
+</note>
+
+<!--  -->
+
+<!--  -->
+
+<!--  -->
+
+<!--  -->
+
+<!--  -->
+
+
+
+<!--  -->
+
+<!--  -->
+
+<!--  -->
+
+<!--  -->
+
+<!--  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

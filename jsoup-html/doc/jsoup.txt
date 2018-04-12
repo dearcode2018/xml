@@ -1,0 +1,27 @@
+
+白名单 - Whitelist
+1) 添加标签
+2) 给标签添加属性
+3) 给标签属性添加协议
+可以在 none / simpleText / basic / basicWithImages / relaxed 的基础上
+进行扩展，放大白名单. 
+addEnforcedAttribute 给指定的标签设置强制属性，若存在，则覆盖其值.
+preserveRelativeLinks(boolean preserve) 是否保持相对链接，否则将链接
+转换成绝对路径.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

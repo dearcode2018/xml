@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<user id="20150628" valid="false">
+  <username>张三</username>
+  <nickname>少年张三丰</nickname>
+  <age>23</age>
+  <password>123456</password>
+  <lastLoginTime>2015-07-30 15:14:00</lastLoginTime>
+  <lastLoginIp>192.168.5.66</lastLoginIp>
+  <addresses>
+    <address>
+      <nation>中国</nation>
+      <province>广东</province>
+      <city>广州</city>
+      <county>天河</county>
+      <street>体育西路123号</street>
+    </address>
+    <address>
+      <nation>中国</nation>
+      <province>上海</province>
+      <city>浦东新区</city>
+      <county>惠南镇</county>
+      <street>沪南公路256号</street>
+    </address>
+  </addresses>
+  <company id="200512345">
+    <name>广东农业科技有限公司</name>
+    <location>广州市越秀区解放路123号</location>
+    <position>科技研究员</position>
+    <salary>3500.68</salary>
+    <remark>主导农业科技研发</remark>
+  </company>
+</user>

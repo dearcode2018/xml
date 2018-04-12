@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.hua</groupId>
+		<artifactId>xml-entire</artifactId>
+		<version>0.0.1</version>
+	</parent>	
+	<artifactId>xmlbeans</artifactId>
+	<packaging>jar</packaging>
+	<name>xmlbeans</name>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		
+		<xml.version>0.0.1</xml.version>
+		<!-- xmlbeans 高版本 需要 saxon9以及以上的版本 这里选用2.3.0 -->
+		<xmlbeans.version>2.6.0</xmlbeans.version>
+		<saxon.version>8.7</saxon.version>		
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.hua</groupId>
+			<artifactId>xml</artifactId>
+			<version>${xml.version}</version>
+		</dependency>
+
+<!-- 		<dependency>
+			<groupId>net.sf.saxon</groupId>
+			<artifactId>saxon</artifactId>
+			<version>${saxon.version}</version>
+		</dependency> -->
+
+		<dependency>
+			<groupId>org.apache.xmlbeans</groupId>
+			<artifactId>xmlbeans</artifactId>
+			<version>${xmlbeans.version}</version>
+		</dependency>
+		
+<!-- 		<dependency>
+			<groupId>org.apache.xmlbeans</groupId>
+			<artifactId>xmlbeans-xpath</artifactId>
+			<version>${xmlbeans.version}</version>
+		</dependency>	 -->
+
+		<dependency>
+			<groupId>org.apache.xmlbeans</groupId>
+			<artifactId>xmlbeans-xmlpublic</artifactId>
+			<version>${xmlbeans.version}</version>
+		</dependency>	
+
+		<dependency>
+			<groupId>org.apache.xmlbeans</groupId>
+			<artifactId>xmlbeans-qname</artifactId>
+			<version>${xmlbeans.version}</version>
+		</dependency>	
+		
+	</dependencies>
+
+</project>

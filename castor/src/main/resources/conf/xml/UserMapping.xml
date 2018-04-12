@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns="http://castor.exolab.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://castor.exolab.org/ https://raw.githubusercontent.com/zhengqianye/xml/xsd/castor-mapping.xsd">
+
+	<!-- -->
+	<class name="com.hua.bean.User" auto-complete="true">
+		<description>User</description>
+		<!-- 根结点 -->
+		<map-to xml="user" />
+		<field name="id" type="string">
+			<bind-xml name="id" node="attribute" />
+		</field>
+		<field name="valid" type="java.lang.Boolean">
+			<bind-xml name="valid" node="attribute" />
+		</field>
+		<field name="username" type="string" required="true">
+			<bind-xml name="username" node="element" />
+		</field>
+		<field name="nickname" type="string">
+			<bind-xml name="nickname" node="element" />
+		</field>
+		<field name="age" type="integer">
+			<bind-xml name="age" node="element" />
+		</field>
+		<field name="password" type="string" required="true">
+			<bind-xml name="password" node="element" />
+		</field>
+		<field name="type" handler="com.hua.handler.UserTypeHandler">
+			<bind-xml name="type" node="element" auto-naming="deriveByClass">
+			</bind-xml>
+		</field>		
+		<!-- 注意，使用handler来解析日期后， type需要设置为string才能正常转换 -->
+		<field name="lastLoginTime" type="string"
+			handler="com.hua.handler.DateTimeHandler">
+			<bind-xml name="lastLoginTime" node="element" />
+		</field>
+		<field name="lastLoginIp" type="string">
+			<bind-xml name="lastLoginIp" node="element" />
+		</field>
+		<!-- 地址数组 -->
+		<field name="addresses" collection="arraylist" type="com.hua.bean.Address">
+			<!-- 一定要加上 auto-naming="deriveByClass" 绑定到标签 driverByField 是属性 -->
+			<bind-xml name="addresses" node="element" auto-naming="deriveByClass" />
+		</field>
+
+		<!-- 所属公司 [必填] -->
+		<field name="company" type="com.hua.bean.Company" required="true">
+			<bind-xml name="company" node="element" />
+		</field>
+	</class>
+
+	<!-- 其他类型的声明放在独立的class标签中 -->
+
+	<!-- 地址对象 -->
+	<class name="com.hua.bean.Address" auto-complete="true">
+		<map-to xml="address" />
+		<field name="nation" type="string">
+			<bind-xml name="nation" node="element" />
+		</field>
+		<field name="province" type="string">
+			<bind-xml name="province" node="element" />
+		</field>
+		<field name="city" type="string">
+			<bind-xml name="city" node="element" />
+		</field>
+		<field name="county" type="string">
+			<bind-xml name="county" node="element" />
+		</field>
+		<field name="street" type="string">
+			<bind-xml name="street" node="element" />
+		</field>
+	</class>
+
+	<!-- 所属公司 -->
+	<class name="com.hua.bean.Company" auto-complete="true">
+		<map-to xml="company" />
+		<field name="id" type="string">
+			<bind-xml name="id" node="attribute" />
+		</field>
+		<field name="name" type="string">
+			<bind-xml name="name" node="element" />
+		</field>
+		<field name="location" type="string">
+			<bind-xml name="location" node="element" />
+		</field>
+		<field name="salary" type="double">
+			<bind-xml name="salary" node="element" />
+		</field>
+		<field name="remark" type="string">
+			<bind-xml name="remark" node="element" />
+		</field>
+	</class>
+	
+	
+</mapping>

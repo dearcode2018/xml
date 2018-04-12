@@ -1,0 +1,26 @@
+Castor
+
+castor 可以用mapping.xml文件来描述转换后的Java对象的xml基本形态，类似于
+xstream的注解.
+
+参考
+http://www.cnblogs.com/javaTest/archive/2011/04/25/2589351.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

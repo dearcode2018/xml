@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<user>
+	<!-- xml中字段的命名 必须将驼峰用 - 拆开 -->
+	<id>20150628</id>
+	<username>张三11</username>
+	<nickname>少年张三丰</nickname>
+	<password>1234562</password>
+	<valid>false</valid>
+		<!-- xml中字段的命名 必须将驼峰用 - 拆开 -->
+	<!-- <last-login-time>2015-07-13 16:31:09</last-login-time> -->
+<!-- 	<last-login-time>2015-07-13</last-login-time> -->
+	<!-- xml中字段的命名 必须将驼峰用 - 拆开 -->
+	<last-login-ip>192.168.5.66</last-login-ip>
+</user>

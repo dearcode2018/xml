@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<binding value-style="attribute">
+	<mapping class="com.hua.bean.User" name="user">
+		<value name="id" field="id" sytle="element" usage="optional" />
+		<value name="username" field="username" sytle="element" usage="optional" />
+		<value name="nickname" field="nickname" sytle="element" usage="optional" />
+		<value name="password" field="password" sytle="element" usage="optional" />
+		<value name="valid" field="valid" sytle="element" usage="optional" />
+		<value name="lastLoginTime" field="lastLoginTime" sytle="element"
+			usage="optional" />
+		<value name="lastLoginIp" field="lastLoginIp" sytle="element"
+			usage="optional" />
+	</mapping>
+</binding>

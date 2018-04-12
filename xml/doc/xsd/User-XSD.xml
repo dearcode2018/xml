@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 注意，引入本地的xsd文件，需要使用 file协议，file:///路径 -->
+<user xmlns="http://www.hua.com/user"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.hua.com/user file:///D:/data/xsd/com/hua/user1.xsd">
+	
+	
+</user>

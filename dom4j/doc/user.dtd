@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+@filename User.dtd
+@version 1.0
+@author qye.zheng
+@description User 文档类型定义
+-->
+<!-- 根元素定义 -->
+<!ELEMENT user (username, nickname?, age?, password, type?, lastLoginTime?, lastLoginIp?, addresses, company)
+>	
+<!-- 用户状态 - 是否有效 默认 : 有效 -->
+<!-- 根元素 - id属性，必填 -->
+<!-- 注意，注释不能写入属性列表定义里面 -->
+<!ATTLIST user
+id CDATA #REQUIRED
+valid (true | false) "true"
+>
+
+<!-- 登录-用户名 (唯一) -->
+<!ELEMENT username (#PCDATA)>
+
+<!-- 昵称 (用于显示)  -->
+<!ELEMENT nickname (#PCDATA)>
+
+<!-- 年龄 [1, 150] -->
+<!ELEMENT age (#PCDATA)>
+
+<!-- 登录-密码 -->
+<!ELEMENT password (#PCDATA)>
+
+<!-- 用户类型，没有子元素，只有属性 -->
+<!ELEMENT type EMPTY>
+<!-- 用户类型，默认是游客  -->
+<!-- 注意，注释不能写入属性列表定义里面 -->
+<!ATTLIST type
+code (001 | 002 | 003 | 004 | 005 | 101) "101"
+>	
+
+<!-- 上一次登录-时间 -->
+<!ELEMENT lastLoginTime (#PCDATA)>
+
+<!-- 上一次登录-IP地址 -->
+<!ELEMENT lastLoginIp (#PCDATA)>
+
+<!-- 地址数组，至少有一个 -->
+<!ELEMENT addresses (address)+>
+
+<!-- 地址对象 -->
+<!ELEMENT address (nation, province, city, county?, street?)>
+<!--  地址对象 - 国家 -->
+<!ELEMENT nation (#PCDATA)>
+<!-- 地址对象 - 省 -->
+<!ELEMENT province (#PCDATA)>
+<!-- 地址对象 - 市 -->
+<!ELEMENT city (#PCDATA)>
+<!-- 地址对象 - 县 -->
+<!ELEMENT county (#PCDATA)>
+<!-- 地址对象 - 街道 -->
+<!ELEMENT street (#PCDATA)>
+
+<!-- 所属公司 -->
+<!ELEMENT company (name, location?, position, salary?, remark?)>
+<!-- 所属公司 - id属性，必填 -->
+<!-- 注意，注释不能写入属性列表定义里面 -->
+<!ATTLIST company 
+id CDATA #REQUIRED
+>	
+
+<!-- 公司对象 - 名称 -->
+<!ELEMENT name (#PCDATA)>
+<!--  公司对象 - 地址 -->
+<!ELEMENT location (#PCDATA)>
+<!--  公司对象 - 在该公司担任的职位 -->
+<!ELEMENT position (#PCDATA)>
+<!--  月薪 [2000, 50000] -->
+<!ELEMENT salary (#PCDATA)>
+<!--  公司对象 - 备注 -->
+<!ELEMENT remark (#PCDATA)>

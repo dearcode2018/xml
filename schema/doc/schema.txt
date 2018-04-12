@@ -1,0 +1,24 @@
+schema
+
+xsd 验证，根据xsd文档验证一个xml文档是否格式良好、格式正确.
+
+
+参考
+http://blog.csdn.net/youjianbo_han_87/article/details/4386658
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

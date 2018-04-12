@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 注意，引入本地的dtd文件，需要使用 file协议，file:///路径 -->
+<!-- file:///D:/data/dtd/com/hua/user.dtd -->
+<!DOCTYPE user PUBLIC "-//www.hua.com//DTD User //EN" 
+"https://raw.githubusercontent.com/zhengqianye/xml/dtd/user.dtd">
+<user id="20152013" valid="true">
+
+	<!-- 登录-用户名 (唯一) -->
+	<username>张三</username>
+	<!-- 昵称 (用于显示) -->
+	<nickname>少年张三丰</nickname>
+	<!-- 年龄 [1, 150] -->
+	<age>23</age>	
+	<!-- 登录-密码  -->
+	<password>123456</password>
+	<!-- 
+	/**
+	 * DTD 文档中的默认值，在Java Bean中可以不用设置
+	 * 在根据DTD对xml文档进行校验时，会直接读取DTD
+	 * 中的默认值，只要xml文档中没有明确声明，则无论
+	 * Java Bean 定义中是否声明了默认值，以DTD规格为准.
+	 */	
+	 -->
+	<!-- 用户类型，默认是游客 -->
+	<!-- <type /> -->
+ 	<!-- <type code="101" /> -->
+ 	<type>101</type>
+	<!-- 上一次登录-时间 -->
+	<lastLoginTime>2015-07-13 16:31:09</lastLoginTime>
+	<!-- 上一次登录-IP地址 -->
+	<lastLoginIp>192.168.5.66</lastLoginIp>	
+	<!-- 地址列表 -->
+	<addresses>
+		<!-- 地址对象1 -->
+		<address>
+			<nation>中国</nation>
+			<province>广东</province>
+			<city>广州</city>
+			<county>天河</county>
+			<street>体育西路123号</street>
+		</address>
+		<!-- 地址对象2 -->
+		<address>
+			<nation>中国</nation>
+			<province>上海</province>
+			<city>浦东新区</city>
+			<county>惠南镇</county>
+			<street>沪南公路256号</street>
+		</address>		
+	</addresses>
+	<!--所属公司  -->
+	<company id="200512345">
+		<name>广东农业科技有限公司</name>
+		<location>广州市越秀区解放路123号</location>
+		<position>科技研究员</position>
+		<salary>3500.68</salary>		
+		<remark>主导农业科技研发</remark>
+	</company>
+</user>

@@ -1,0 +1,29 @@
+StAX(Stream API for Xml)
+
+StAX和SAX区别
+StAX的API可以读取和写入XML文档。使用SAX API，XML可以是只读的。
+
+StAX现在已经成为jdk的组成部分了，在javax.xml.stream包下
+
+
+
+StartElement asStartElement() - 用于检索值和元素的属性。
+
+EndElement asEndElement() - 调用元件的端部。
+
+Characters asCharacters() - 可用于获得字符，例如一个CDATA，空白等。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

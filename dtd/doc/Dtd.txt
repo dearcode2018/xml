@@ -1,0 +1,43 @@
+Document Type Definition
+
+
+
+
+
+
+
+
+
+
+
+以下是属性类型的选项：
+类型				描述
+CDATA		值为字符数据 (character data)
+(en1|en2|..)		此值是枚举列表中的一个值
+ID		值为唯一的 id
+IDREF		值为另外一个元素的 id
+IDREFS		值为其他 id 的列表
+NMTOKEN	值为合法的 XML 名称
+NMTOKENS	值为合法的 XML 名称的列表
+ENTITY		值是一个实体
+ENTITIES	值是一个实体列表
+NOTATION	此值是符号的名称
+xml:		值是一个预定义的 XML 值
+
+
+默认值参数可使用下列值：
+值								解释
+值						属性的默认值
+#REQUIRED		属性值是必需的
+#IMPLIED			属性不是必需的
+#FIXED value		属性值是固定的
+
+
+
+
+
+
+
+
+
+
