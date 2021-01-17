@@ -24,7 +24,7 @@ import com.hua.util.ClassPathUtil;
 //@RunWith()
 public class BaseTest extends BaseLog {
 	
-	public static final String PATH = ClassPathUtil.getClassSubpath("/com/hua/jdom/xml");
+	public static final String PATH = ClassPathUtil.getClassPath("/com/hua/jdom/xml");
 	
 	/**
 	 * 

@@ -6,6 +6,8 @@
  */
 package com.hua.entity.dom;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * 描述: 
@@ -13,25 +15,12 @@ package com.hua.entity.dom;
  * People
  * 
  */
+@Data
+@EqualsAndHashCode(callSuper=false)
 public final class People extends BaseTag {
 	
-	private Address address;
+	private static final long serialVersionUID = 1L;
 	
-	/** 无参构造方法 */
-	public People() {}
-
-	/**
-	 * @return the address
-	 */
-	public Address getAddress() {
-		return address;
-	}
-
-	/**
-	 * @param address the address to set
-	 */
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-	
+    private Address address;
+    
 }

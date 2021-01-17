@@ -83,7 +83,7 @@ public final class UserXMLTest extends BaseTest {
 			 * 字段处理器 接口
 			 * org.exolab.castor.mapping.FieldHandler<T>
 			 */
-			String url = ClassPathUtil.getClassSubpath("/conf/xml/UserMapping.xml");
+			String url = ClassPathUtil.getClassPath("/conf/xml/UserMapping.xml");
 			Mapping mapping = new Mapping();
 			mapping.loadMapping(url);
 			
@@ -119,7 +119,7 @@ public final class UserXMLTest extends BaseTest {
 			 * 字段处理器 接口
 			 * org.exolab.castor.mapping.FieldHandler<T>
 			 */
-			String url = ClassPathUtil.getClassSubpath("/conf/xml/UserMapping.xml");
+			String url = ClassPathUtil.getClassPath("/conf/xml/UserMapping.xml");
 			Mapping mapping = new Mapping();
 			mapping.loadMapping(url);
 			
@@ -155,7 +155,7 @@ public final class UserXMLTest extends BaseTest {
 			 * 字段处理器 接口
 			 * org.exolab.castor.mapping.FieldHandler<T>
 			 */
-			String url = ClassPathUtil.getClassSubpath("/conf/xml/UserMapping.xml");
+			String url = ClassPathUtil.getClassPath("/conf/xml/UserMapping.xml");
 			Mapping mapping = new Mapping();
 			mapping.loadMapping(url);
 			
@@ -191,7 +191,7 @@ public final class UserXMLTest extends BaseTest {
 			 * 字段处理器 接口
 			 * org.exolab.castor.mapping.FieldHandler<T>
 			 */
-			String url = ClassPathUtil.getClassSubpath("/conf/xml/UserMapping.xml");
+			String url = ClassPathUtil.getClassPath("/conf/xml/UserMapping.xml");
 			Mapping mapping = new Mapping();
 			mapping.loadMapping(url);
 			
@@ -220,7 +220,7 @@ public final class UserXMLTest extends BaseTest {
 			 * 字段处理器 接口
 			 * org.exolab.castor.mapping.FieldHandler<T>
 			 */
-			String url = ClassPathUtil.getClassSubpath("/conf/xml/UserMapping.xml");
+			String url = ClassPathUtil.getClassPath("/conf/xml/UserMapping.xml");
 			Mapping mapping = new Mapping();
 			mapping.loadMapping(url);
 			
@@ -261,7 +261,7 @@ public final class UserXMLTest extends BaseTest {
 			 * 字段处理器 接口
 			 * org.exolab.castor.mapping.FieldHandler<T>
 			 */
-			String url = ClassPathUtil.getClassSubpath("/conf/xml/UserMapping.xml");
+			String url = ClassPathUtil.getClassPath("/conf/xml/UserMapping.xml");
 			Mapping mapping = new Mapping();
 			mapping.loadMapping(url);
 			
@@ -294,7 +294,7 @@ public final class UserXMLTest extends BaseTest {
 	public void testHandlerWrite() {
 		try {
 			
-			String url = ClassPathUtil.getClassSubpath("/conf/xml/UserMapping.xml");
+			String url = ClassPathUtil.getClassPath("/conf/xml/UserMapping.xml");
 			Mapping mapping = new Mapping();
 			mapping.loadMapping(url);
 			

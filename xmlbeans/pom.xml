@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.hua</groupId>
 		<artifactId>xml-entire</artifactId>
-		<version>0.0.1</version>
+		<version>1.0.0</version>
 	</parent>	
 	<artifactId>xmlbeans</artifactId>
 	<packaging>jar</packaging>
@@ -13,7 +13,6 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		
-		<xml.version>0.0.1</xml.version>
 		<!-- xmlbeans 高版本 需要 saxon9以及以上的版本 这里选用2.3.0 -->
 		<xmlbeans.version>2.6.0</xmlbeans.version>
 		<saxon.version>8.7</saxon.version>		
@@ -22,8 +21,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.hua</groupId>
-			<artifactId>xml</artifactId>
-			<version>${xml.version}</version>
+			<artifactId>xml-core</artifactId>
 		</dependency>
 
 <!-- 		<dependency>

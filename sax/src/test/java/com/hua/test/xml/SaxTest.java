@@ -41,6 +41,22 @@ public final class SaxTest extends BaseTest {
 	 * 
 	 */
 	@Test
+	public void testSax() {
+		try {
+			
+			
+		} catch (Exception e) {
+			log.error("testSax =====> ", e);
+		}
+	}	
+	
+	/**
+	 * 
+	 * 描述: 
+	 * @author qye.zheng
+	 * 
+	 */
+	@Test
 	public void test() {
 		try {
 			

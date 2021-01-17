@@ -6,6 +6,9 @@
  */
 package com.hua.entity.xml;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 /**
  * 
  * PrimaryAddress
@@ -13,44 +16,14 @@ package com.hua.entity.xml;
  * @author  qye.zheng
  * 
  */
+@Data
+@EqualsAndHashCode(callSuper=false)
 public class PrimaryAddress 
 {
-	
 	// 邮政编码
 	private String postalCode;
 	
 	// 地址行
 	private String addressLine;
-
-	/**
-	 * @return the postalCode
-	 */
-	public String getPostalCode()
-	{
-		return postalCode;
-	}
-
-	/**
-	 * @param postalCode the postalCode to set
-	 */
-	public void setPostalCode(String postalCode)
-	{
-		this.postalCode = postalCode;
-	}
-
-	/**
-	 * @return the addressLine
-	 */
-	public String getAddressLine()
-	{
-		return addressLine;
-	}
-
-	/**
-	 * @param addressLine the addressLine to set
-	 */
-	public void setAddressLine(String addressLine)
-	{
-		this.addressLine = addressLine;
-	}
+	
 }

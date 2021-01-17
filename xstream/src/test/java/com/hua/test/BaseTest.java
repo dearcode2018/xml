@@ -7,9 +7,11 @@
  */
 package com.hua.test;
 
-// 静态导入
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 
 import com.hua.log.BaseLog;
 
@@ -20,17 +22,19 @@ import com.hua.log.BaseLog;
  * @author qye.zheng
  * BaseTest
  */
-//@RunWith()
+//@RunWith(JUnitPlatform.class)
+//@TestInstance(TestInstance.Lifecycle.PER_METHOD)
+@DisplayName("BaseTest")
 public class BaseTest extends BaseLog {
 	
-	public String targetXml;
-	
-	public String targetJson;
-	
-	public String resultXml;
-	
-	
-	public String resultJson;
+    
+    protected String targetXml;    
+    
+    protected String resultXml;
+    
+    protected String targetJson;
+    
+    protected String resultJson;
 	
 	/**
 	 * 
@@ -38,7 +42,8 @@ public class BaseTest extends BaseLog {
 	 * @author qye.zheng
 	 * 
 	 */
-	@BeforeClass
+	@DisplayName("beforeClass")
+	@BeforeAll
 	public static void beforeClass() {
 		System.out.println("beforeClass()");
 	}
@@ -49,9 +54,34 @@ public class BaseTest extends BaseLog {
 	 * @author qye.zheng
 	 * 
 	 */
-	@AfterClass
+	@DisplayName("afterClass")
+	@AfterAll
 	public static void afterClass() {
 		System.out.println("afterClass()");
+	}
+	
+	/**
+	 * 
+	 * 描述: [每个测试-方法]开始之前运行
+	 * @author qye.zheng
+	 * 
+	 */
+	@DisplayName("beforeMethod")
+	@BeforeEach
+	public void beforeMethod() {
+		System.out.println("beforeMethod()");
+	}
+	
+	/**
+	 * 
+	 * 描述: [每个测试-方法]结束之后运行
+	 * @author qye.zheng
+	 * 
+	 */
+	@DisplayName("afterMethod")
+	@AfterEach
+	public void afterMethod() {
+		System.out.println("afterMethod()");
 	}
 
 }

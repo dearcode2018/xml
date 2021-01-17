@@ -5,66 +5,55 @@
 	<parent>
 		<groupId>com.hua</groupId>
 		<artifactId>xml-entire</artifactId>
-		<version>0.0.1</version>
+		<version>1.0.0</version>
 	</parent>	
 	<artifactId>jaxb</artifactId>
 	<packaging>jar</packaging>
 	<name>jaxb</name>
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		
-		<xml.version>0.0.1</xml.version>
-		<jaxb.version>2.2.11</jaxb.version>
+	
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>com.hua</groupId>
-			<artifactId>xml</artifactId>
-			<version>${xml.version}</version>
+			<artifactId>xml-core</artifactId>
 		</dependency>
 
 		<dependency>
 			<groupId>javax.xml.bind</groupId>
 			<artifactId>jaxb-api</artifactId>
-			<version>${jaxb.version}</version>
 		</dependency>
 		
 		<!-- impl -->
 		<dependency>
 			<groupId>com.sun.xml.bind</groupId>
 			<artifactId>jaxb-impl</artifactId>
-			<version>${jaxb.version}</version>
 		</dependency>		
 		
 		<dependency>
 			<groupId>com.sun.xml.bind</groupId>
 			<artifactId>jaxb-xjc</artifactId>
-			<version>${jaxb.version}</version>
 		</dependency>		
 
 		<dependency>
 			<groupId>com.sun.xml.bind</groupId>
 			<artifactId>jaxb-core</artifactId>
-			<version>${jaxb.version}</version>
 		</dependency>	
 
 		<dependency>
 			<groupId>com.sun.xml.bind</groupId>
 			<artifactId>jaxb-osgi</artifactId>
-			<version>${jaxb.version}</version>
 		</dependency>	
 
 		<dependency>
 			<groupId>com.sun.xml.bind</groupId>
 			<artifactId>jaxb-jxc</artifactId>
-			<version>${jaxb.version}</version>
 		</dependency>	
 
 		<dependency>
 			<groupId>com.sun.xml.bind</groupId>
 			<artifactId>jaxb-extra-osgi</artifactId>
-			<version>${jaxb.version}</version>
 		</dependency>	
 
 <!-- 		<dependency>

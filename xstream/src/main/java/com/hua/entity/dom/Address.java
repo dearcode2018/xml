@@ -6,15 +6,18 @@
  */
 package com.hua.entity.dom;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 /**
  * 描述: 
  * @author qye.zheng
  * Address
  * 
  */
+@Data
+@EqualsAndHashCode(callSuper=false)
 public final class Address extends BaseTag {
-	
-	/** 无参构造方法 */
-	public Address() {	}
+    private static final long serialVersionUID = 1L;
 	
 }

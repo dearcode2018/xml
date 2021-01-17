@@ -5,35 +5,24 @@
 	<parent>
 		<groupId>com.hua</groupId>
 		<artifactId>xml-entire</artifactId>
-		<version>0.0.1</version>
+		<version>1.0.0</version>
 	</parent>	
 	<artifactId>xstream</artifactId>
 	<packaging>jar</packaging>
 	<name>xstream</name>
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		
-		<xml.version>0.0.1</xml.version>
-		<xstream.version>1.4.8</xstream.version>			
+				
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>com.hua</groupId>
-			<artifactId>xml</artifactId>
-			<version>${xml.version}</version>
+			<artifactId>xml-core</artifactId>
 		</dependency>
 
-<!-- 		<dependency>
-			<groupId>com.thoughtworks.xstream</groupId>
-			<artifactId>xstream</artifactId>
-			<version>${xstream.version}</version>
-		</dependency>	 -->	
-		
 		<dependency>
 			<groupId>com.thoughtworks.xstream</groupId>
 			<artifactId>xstream</artifactId>
-			<version>${xstream.version}</version>
 		</dependency>			
 		
 	</dependencies>

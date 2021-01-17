@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.hua</groupId>
 		<artifactId>xml-entire</artifactId>
-		<version>0.0.1</version>
+		<version>1.0.0</version>
 	</parent>	
 	<artifactId>jdom2</artifactId>
 	<packaging>jar</packaging>
@@ -13,7 +13,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		
-		<xml.version>0.0.1</xml.version>
+		<xml.version>1.0.0</xml.version>
 		<jdom2.version>2.0.6</jdom2.version>
 		<jdom.contrib.version>1.1.3</jdom.contrib.version>				
 	</properties>
@@ -21,8 +21,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.hua</groupId>
-			<artifactId>xml</artifactId>
-			<version>${xml.version}</version>
+			<artifactId>xml-core</artifactId>
 		</dependency>
 
 		<dependency>
