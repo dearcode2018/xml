@@ -9,11 +9,14 @@ package com.hua.entity;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 
+import com.hua.constant.ConvertConstant;
 import com.hua.convert.BooleanYNConvert;
 import com.hua.convert.CdataConvert;
 import com.hua.convert.LocalDateConvert;
 import com.hua.convert.LocalDateTimeConvert;
+import com.hua.convert.ListValueConvert;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 import com.thoughtworks.xstream.annotations.XStreamConverter;
@@ -58,6 +61,16 @@ public final class ConvertEntity {
     private Boolean flag;
     
     private Integer number;
+    
+    @XStreamAlias(ConvertConstant.REPLACE_TAG)
+    @XStreamConverter(value = ListValueConvert.class)
+    private ListValueType values;
+    
+    @XStreamAlias(ConvertConstant.REPLACE_TAG)
+    @XStreamConverter(value = ListValueConvert.class)
+    private ListValueType types;
+    
+    private Map<String, Object> someMap;
     
     /**
      * 

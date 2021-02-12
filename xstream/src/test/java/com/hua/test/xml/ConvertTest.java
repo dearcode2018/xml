@@ -26,7 +26,10 @@ import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -35,10 +38,13 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+import com.hua.constant.ConvertConstant;
 import com.hua.entity.ConvertEntity;
+import com.hua.entity.ListValueType;
 import com.hua.test.BaseTest;
+import com.hua.util.ClassPathUtil;
+import com.hua.util.FileUtil;
 import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.io.HierarchicalStreamDriver;
 import com.thoughtworks.xstream.io.naming.NoNameCoder;
 import com.thoughtworks.xstream.io.xml.StaxDriver;
 
@@ -65,6 +71,16 @@ public final class ConvertTest extends BaseTest {
     @Test
     public void testConvert() {
         try {
+            //XStream xstream = new XStream();
+            // 解决多一个下划线的问题
+            // 对名称不进行编码
+            //final HierarchicalStreamDriver driver = new Xpp3Driver(new NoNameCoder());
+            final StaxDriver driver = new StaxDriver(new NoNameCoder());
+            // 对特殊字符不转义，输出没有格式，为简单模式 (在正式场合上使用)
+            driver.getOutputFactory().setProperty("escapeCharacters", false);
+            final XStream xstream = new XStream(driver);
+            xstream.autodetectAnnotations(true);
+        	
             ConvertEntity entity = new ConvertEntity();
             entity.setFirstname("guanghua");
             entity.setLastname("li");
@@ -100,15 +116,16 @@ public final class ConvertTest extends BaseTest {
              * 输出xml多了一个下划线
              * 解决方式: 
              */
-            //XStream xstream = new XStream();
-            // 解决多一个下划线的问题
-            // 对名称不进行编码
-            //final HierarchicalStreamDriver driver = new Xpp3Driver(new NoNameCoder());
-            final StaxDriver driver = new StaxDriver(new NoNameCoder());
-            // 对特殊字符不转义，输出没有格式，为简单模式 (在正式场合上使用)
-            driver.getOutputFactory().setProperty("escapeCharacters", false);
-            final XStream xstream = new XStream(driver);
-            xstream.autodetectAnnotations(true);
+            
+            ListValueType mp4s = new ListValueType();
+            mp4s.setTag("value_");
+            mp4s.setValues(Arrays.asList("list-1", "list-2"));
+            entity.setValues(mp4s);
+            
+            ListValueType types = new ListValueType();
+            types.setTag("type-");
+            types.setValues(Arrays.asList(1, 2));
+            entity.setTypes(types);
             
             /**
              * 结果显示类似
@@ -122,6 +139,107 @@ public final class ConvertTest extends BaseTest {
             //xstream.alias("convertEntity", ConvertEntity.class);
             //xstream.alias("primaryAddress", PrimaryAddress.class);
             //xstream.alias("billingAddress", BillingAddress.class);
+            
+            // 输出为字符串
+            resultXml = xstream.toXML(entity);
+            // 替换掉特殊标签
+            resultXml = resultXml.replaceAll(ConvertConstant.RPLACE_REGEX, "");
+            
+            assertNotNull(resultXml);
+            
+            System.out.println(resultXml);
+            
+        } catch (Exception e) {
+            log.error("test =====> ", e);
+        }
+    }
+    
+    /**
+     * 
+     * 描述: 
+     * @author qye.zheng
+     * 
+     */
+    //@DisplayName("test")
+    @Test
+    public void testConvertFromJson() {
+        try {
+           
+            /*
+             * 无参方式: @XStreamAlias 或字段名有下划线时，
+             * 输出xml多了一个下划线
+             * 解决方式: 
+             */
+            //XStream xstream = new XStream();
+            // 解决多一个下划线的问题
+            // 对名称不进行编码
+            //final HierarchicalStreamDriver driver = new Xpp3Driver(new NoNameCoder());
+            final StaxDriver driver = new StaxDriver(new NoNameCoder());
+            // 对特殊字符不转义，输出没有格式，为简单模式 (在正式场合上使用)
+            driver.getOutputFactory().setProperty("escapeCharacters", false);
+            final XStream xstream = new XStream(driver);
+            xstream.autodetectAnnotations(true);
+            //File file = new File(ClassPathUtil.getClassPath("/full.json"));
+            String content = FileUtil.getString(ClassPathUtil.getClassPath("/full.json"));
+            Object obj = xstream.fromXML(content);
+            
+            // 输出为字符串
+            resultXml = xstream.toXML(obj);
+            assertNotNull(resultXml);
+            
+            System.out.println(resultXml);
+            
+        } catch (Exception e) {
+            log.error("test =====> ", e);
+        }
+    }
+    
+    
+    /**
+     * 
+     * 描述: 
+     * @author qye.zheng
+     * 
+     */
+    //@DisplayName("test")
+    @Test
+    public void testConvertMap() {
+        try {
+            ConvertEntity entity = new ConvertEntity();
+            entity.setFirstname("guanghua");
+            entity.setLastname("li");
+            entity.setGender("male");
+            entity.setPhoneNumber("021-564697654");
+            //entity.setXmlns("dddddddd");
+            
+            entity.setDate(LocalDate.now());
+            entity.setDateTime(LocalDateTime.now());
+            entity.setNumber(123);
+            // 空值不输出
+            entity.setFlag(Boolean.TRUE);
+            /*
+             * 无参方式: @XStreamAlias 或字段名有下划线时，
+             * 输出xml多了一个下划线
+             * 解决方式: 
+             */
+            //XStream xstream = new XStream();
+            // 解决多一个下划线的问题
+            // 对名称不进行编码
+            //final HierarchicalStreamDriver driver = new Xpp3Driver(new NoNameCoder());
+            final StaxDriver driver = new StaxDriver(new NoNameCoder());
+            // 对特殊字符不转义，输出没有格式，为简单模式 (在正式场合上使用)
+            driver.getOutputFactory().setProperty("escapeCharacters", false);
+            final XStream xstream = new XStream(driver);
+            xstream.autodetectAnnotations(true);
+            //Map<String, Object> map2 = BeanUtil.bean2Map(entity, false);
+            Map<String, Object> someMap = new HashMap<>();
+            someMap.put("link_1", "11");
+            someMap.put("link_2", "22");
+            //entity.setSomeMap(someMap);
+            ListValueType mp4s = new ListValueType();
+            mp4s.setTag("mp4");
+            mp4s.setValues(Arrays.asList("list-1", "list-2"));
+            entity.setValues(mp4s);
             
             // 输出为字符串
             resultXml = xstream.toXML(entity);

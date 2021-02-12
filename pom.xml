@@ -42,7 +42,8 @@
 		<jaxb.version>2.2.11</jaxb.version>	
 		<xml-core.version>1.0.0</xml-core.version>
 		<axiom.version>1.2.15</axiom.version>
-		<xstream.version>1.4.15</xstream.version>					
+		<xstream.version>1.4.15</xstream.version>	
+		<guava.version>30.1-jre</guava.version>							
 	</properties>  
   
   
@@ -224,7 +225,13 @@
 				<groupId>com.thoughtworks.xstream</groupId>
 				<artifactId>xstream</artifactId>
 				<version>${xstream.version}</version>
-			</dependency>								
+			</dependency>	
+			
+			<dependency>
+			    <groupId>com.google.guava</groupId>
+			    <artifactId>guava</artifactId>
+			    <version>${guava.version}</version>
+			</dependency>										
 		</dependencies>
 	
 	</dependencyManagement>
