@@ -31,6 +31,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.xml.stream.XMLOutputFactory;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
@@ -227,8 +229,9 @@ public final class ConvertTest extends BaseTest {
             // 对名称不进行编码
             //final HierarchicalStreamDriver driver = new Xpp3Driver(new NoNameCoder());
             final StaxDriver driver = new StaxDriver(new NoNameCoder());
+            XMLOutputFactory factory = driver.getOutputFactory();
             // 对特殊字符不转义，输出没有格式，为简单模式 (在正式场合上使用)
-            driver.getOutputFactory().setProperty("escapeCharacters", false);
+            factory.setProperty("escapeCharacters", false);
             final XStream xstream = new XStream(driver);
             xstream.autodetectAnnotations(true);
             //Map<String, Object> map2 = BeanUtil.bean2Map(entity, false);

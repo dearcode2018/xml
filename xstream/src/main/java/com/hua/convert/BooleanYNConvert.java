@@ -6,8 +6,6 @@
  */
 package com.hua.convert;
 
-import java.lang.annotation.Annotation;
-
 import com.thoughtworks.xstream.converters.basic.AbstractSingleValueConverter;
 
 

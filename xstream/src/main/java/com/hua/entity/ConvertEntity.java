@@ -14,12 +14,13 @@ import java.util.Map;
 import com.hua.constant.ConvertConstant;
 import com.hua.convert.BooleanYNConvert;
 import com.hua.convert.CdataConvert;
+import com.hua.convert.ListValueConvert;
 import com.hua.convert.LocalDateConvert;
 import com.hua.convert.LocalDateTimeConvert;
-import com.hua.convert.ListValueConvert;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 import com.thoughtworks.xstream.annotations.XStreamConverter;
+import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -33,6 +34,8 @@ import lombok.EqualsAndHashCode;
 @XStreamAlias("ConvertEntity")
 public final class ConvertEntity {
     
+	// 忽略的字段
+	@XStreamOmitField
     private String gender;
     
     @XStreamAlias("first_name")  
@@ -41,7 +44,7 @@ public final class ConvertEntity {
     @XStreamAlias("last-name")  
     private String lastname;
     
-    @XStreamAlias("phone_number")  
+    @XStreamAlias("phone_number")
     private String phoneNumber;
     
     private Address address;
