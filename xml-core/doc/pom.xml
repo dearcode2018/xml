@@ -23,7 +23,7 @@
 		<!-- xmlbeans 高版本 需要 saxon9以及以上的版本 这里选用2.3.0 -->
 		<xmlbeans.version>2.3.0</xmlbeans.version>
 		<saxon.version>8.7</saxon.version>		
-		<xstream.version>1.4.8</xstream.version>			
+		<xstream.version>1.4.17</xstream.version>			
 		 
 	</properties>
 
