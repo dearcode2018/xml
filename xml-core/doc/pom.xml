@@ -21,7 +21,7 @@
 		<sax.version>2.0.1</sax.version>
 		<stax.version>1.2.0</stax.version>
 		<!-- xmlbeans 高版本 需要 saxon9以及以上的版本 这里选用2.3.0 -->
-		<xmlbeans.version>2.3.0</xmlbeans.version>
+		<xmlbeans.version>3.0.0</xmlbeans.version>
 		<saxon.version>8.7</saxon.version>		
 		<xstream.version>1.4.8</xstream.version>			
 		 
