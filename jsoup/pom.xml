@@ -14,7 +14,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		
 		<xml.version>1.0.0</xml.version>
-		<jsoup.version>1.8.1</jsoup.version>				
+		<jsoup.version>1.14.2</jsoup.version>				
 	</properties>
 
 	<dependencies>
