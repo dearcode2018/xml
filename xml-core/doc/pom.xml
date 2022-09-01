@@ -17,7 +17,7 @@
 		<jaxb.api.version>2.2.12</jaxb.api.version>
 		<jaxb.impl.version>2.2.11</jaxb.impl.version>		
 		<jibx.version>1.2.6</jibx.version>		
-		<jsoup.version>1.8.1</jsoup.version>		
+		<jsoup.version>1.15.3</jsoup.version>		
 		<sax.version>2.0.1</sax.version>
 		<stax.version>1.2.0</stax.version>
 		<!-- xmlbeans 高版本 需要 saxon9以及以上的版本 这里选用2.3.0 -->
